@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+    </script>
+    <style type="text/css">
+      #navigation li {
+        list-style: none;
+        float: left;
+        padding: 5px;
+      }
+      #navigation {
+        cursor: pointer;
+      }
+      #navigation .selected {
+        background-color: lightsalmon;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="navigation">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>javascript</li>
+      <li class="selected">JQuery</li>
+      <li>PHP</li>
+      <li>MySQL</li>
+    </ul>
+  </body>
+  <script type="text/javascript">
+    function addEvent(target, eventType, eventHandler, useCapture) {
+      if (target.addEventListener) {
+        target.addEventListener(
+          eventType,
+          eventHandler,
+          useCapture ? useCapture : false
+        );
+      }
+    }
+
+    function clickHandler(event) {
+      let nav = document.getElementById("navigation");
+      for (let i = 0; i < nav.childNodes.length; i++) {
+        let child = nav.childNodes[i];
+        if (child.nodeType == 3) continue;
+        child.className = "";
+      }
+      event.target.className = "selected";
+    }
+
+    addEvent(window, "load", function (eventObj) {
+      let nav = document.getElementById("navigation");
+      for (let i = 0; i < nav.childNodes.length; i++) {
+        var child = nav.childNodes[i];
+        if (child.nodeType == 3) continue;
+        addEvent(child, "click", clickHandler);
+      }
+    });
+  </script>
+</html>

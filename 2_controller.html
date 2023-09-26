@@ -1,0 +1,18 @@
+<html>
+  <body>
+      <ul>
+        <li>test2</li>
+      </ul>
+      <ul class="foo">
+        <li>test</li>
+      </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      (($) => {
+        $("ul.foo").click(function () {
+          $("body").css("background-color", "black");
+        });
+      })(jQuery);
+    </script>
+  </body>
+</html>

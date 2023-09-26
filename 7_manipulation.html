@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <!-- <style>
+      div {
+        border: lightblue solid;
+        margin: 2px;
+        padding: 2px;
+      }
+      p {
+        background-color: yellowgreen;
+        margin: 2px;
+        padding: 2px;
+      }
+      strong {
+        color: lightpink;
+      }
+    </style> -->
+
+    <!-- <style>
+      p {
+        background-color: yellowgreen;
+        margin: 6px 0;
+      }
+      hr {
+        border: 1px dashed;
+        color: #bbb;
+        margin: 32px 0;
+      }
+    </style> -->
+    <style>
+        hr {
+          border: 1px dashed;
+          color: #bbb;
+          margin: 12px 0;
+        }
+    </style>
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-latest.js"
+    ></script>
+    <script>
+      // $("p").append("<strong>hello</strong>");
+      // => p 태그 내부 가장 뒤에 포함
+
+      // $("p").html("<strong>hello</strong>");
+      // => p 태그가 hello로 변경됨
+
+      // $("p").prepend("<strong>hello</strong>");
+      // => p 태그 내부 가장 앞에 포함
+
+      // $("p").after("<b>hello</b>");
+      // => p 태그 뒤에 포함
+
+      // $("p").before("<b>hello</b>");
+      // => p 태그 앞에 포함
+
+      // $("span").wrap("<div><div><p><em><b></b></em></p></div></div>");
+      // => span 태그를 wrap 내의 태그들로 감싼다.
+
+      // $("<b>Paragraph.</b>").replaceAll("p");
+      // => p 태그를 모두 <b>Paragraph.</b> 로 대체한다.
+    </script>
+  </head>
+  <body>
+    <p>I would like to say</p>
+    <hr />
+    <span>Span text</span>
+    <strong>What about me?</strong>
+    <span>Another one</span>
+    <hr />
+    <p>Hello</p>
+    How are
+    <p>you?</p>
+    <button>Call remove() on paragraphs</button>
+    <hr />
+    <p>Hello</p>
+    <p>cruel</p>
+    <p>World</p>
+
+    <script>
+      $("button").click(() => {
+        $("p").remove();
+      });
+    </script>
+  </body>
+</html>
